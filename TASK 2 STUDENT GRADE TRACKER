@@ -1,0 +1,38 @@
+def calculate_grade(grades):
+    total_sum = sum(grades)
+    num_subjects = len(grades)
+    average_grade = total_sum / num_subjects
+    return average_grade
+
+def determine_letter_grade(average_grade):
+    if average_grade >= 90:
+        return 'A'
+    elif average_grade >= 80:
+        return 'B'
+    elif average_grade >= 70:
+        return 'C'
+    elif average_grade >= 60:
+        return 'D'
+    else:
+        return 'F'
+
+def main():
+    student_name = input("Enter student's name: ")
+    num_subjects = int(input("Enter the number of subjects or assignments: "))
+
+    grades = []
+    for i in range(1, num_subjects + 1):
+        grade = float(input(f"Enter grade for subject/assignment {i}: "))
+        grades.append(grade)
+
+    average_grade = calculate_grade(grades)
+    letter_grade = determine_letter_grade(average_grade)
+
+    print("\nStudent Name:", student_name)
+    print("Grades entered:", grades)
+    print("Average Grade:", average_grade)
+    print("Letter Grade:", letter_grade)
+
+if __name__ == "__main__":
+    main()
+
